@@ -12,3 +12,10 @@ export const fetchDetail = async id => {
   const responce = await axios.get(`movie/${id}?api_key=${KEY_API}`);
   return responce.data;
 };
+
+export const fetchSearch = async searchMovies => {
+  const responce = await axios.get(
+    `search/movie?api_key=${KEY_API}&query=${searchMovies}`
+  );
+  return responce.data.results;
+};
